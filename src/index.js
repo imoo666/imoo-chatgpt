@@ -36,7 +36,9 @@ const query = async (queryItem) => {
 
   // 取消 loading
   const button = document.querySelector("#button");
+  const dot = document.querySelector("#dot");
   button.classList.remove("loading");
+  dot.classList.add("hidden");
 };
 
 // 指令集
@@ -95,9 +97,6 @@ const doInstruction = (question) => {
 
 // 用于触发查询
 const handleSend = () => {
-  // 还在 loading 时不允许请求
-  const button = document.querySelector("#button");
-
   const question = document.querySelector("#input").value;
   document.querySelector("#input").value = "";
   if (question.trim() === "") {
@@ -110,12 +109,16 @@ const handleSend = () => {
     return;
   }
 
+  // 还在 loading 时不允许请求
+  const button = document.querySelector("#button");
+  const dot = document.querySelector("#dot");
   if (button.classList.contains("loading")) {
     renderMessageTip("imoo 还在冥思苦想，请稍等");
     return;
   }
   // 进入 loading 状态，开始查询
   button.classList.add("loading");
+  dot.classList.remove("hidden");
   const queryItem = { role: "user", content: question };
   render(queryItem);
   query(queryItem);
