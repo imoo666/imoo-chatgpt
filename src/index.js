@@ -1,13 +1,11 @@
 import { marked } from "marked";
 import { apiUrl } from "../api";
-import copy from "copy-to-clipboard";
-
-let renderTime = 0;
 
 // 查询
 const query = async (queryItem) => {
   const history = JSON.parse(localStorage.getItem("history"));
   const maxLength = Number(localStorage.getItem("max"));
+  const lock = JSON.parse(localStorage.getItem("lock"));
   const key = localStorage.getItem("key");
 
   if (history.length >= maxLength) {
@@ -17,7 +15,7 @@ const query = async (queryItem) => {
     const _data = await fetch(apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ key, messages: [...history, queryItem] }),
+      body: JSON.stringify({ key, messages: [...lock, ...history, queryItem] }),
     });
     const data = await _data.json();
     const replyItem = data.choices[0].message;
@@ -32,6 +30,7 @@ const query = async (queryItem) => {
       localStorage.setItem("history", JSON.stringify(history));
     }
   } catch (err) {
+    console.log(err);
     renderErrorTip("您的网络异常，稍后再试试吧~");
   }
 
@@ -58,21 +57,34 @@ const doInstruction = (question) => {
     }
     return;
   }
+  if (question.startsWith("/set-l")) {
+    const newLock = question.split(":")[1];
+
+    const oldList = JSON.parse(localStorage.getItem("lock"));
+    const newList = [{ role: "user", content: newLock }];
+
+    const finalList = [...oldList, ...newList];
+    localStorage.setItem("lock", JSON.stringify(finalList));
+    renderMessageTip("指令：设定预设-成功，开始提问吧~");
+    return;
+  }
 
   switch (question) {
     case "/c":
       document.querySelector("#container").innerHTML = "";
       localStorage.setItem("history", JSON.stringify([]));
       renderMessageTip("指令：删除记录");
-      break;
+      return;
     case "/i":
-      renderMessageTip(
-        `指令：显示配置。key: ${localStorage.getItem(
-          "key"
-        )}---max: ${localStorage.getItem("max")}`,
-        10000
-      );
-      break;
+      const info = ["key", "max", "lock"]
+        .map((item) => item + ":" + localStorage.getItem(item))
+        .join("; ");
+      renderMessageTip(`指令：显示配置。${info}`, 10000);
+      return;
+    case "/cl":
+      localStorage.setItem("lock", JSON.stringify([]));
+      renderMessageTip("指令：删除预设");
+      return;
     default:
       renderMessageTip(
         "指令：无效指令。问题不支持以斜杠开头，可以尝试在最前面追加空格"
@@ -85,10 +97,6 @@ const doInstruction = (question) => {
 const handleSend = () => {
   // 还在 loading 时不允许请求
   const button = document.querySelector("#button");
-  if (button.classList.contains("loading")) {
-    renderMessageTip("imoo 还在冥思苦想，请稍等");
-    return;
-  }
 
   const question = document.querySelector("#input").value;
   document.querySelector("#input").value = "";
@@ -102,6 +110,10 @@ const handleSend = () => {
     return;
   }
 
+  if (button.classList.contains("loading")) {
+    renderMessageTip("imoo 还在冥思苦想，请稍等");
+    return;
+  }
   // 进入 loading 状态，开始查询
   button.classList.add("loading");
   const queryItem = { role: "user", content: question };
@@ -184,4 +196,7 @@ if (localStorage.getItem("max") === null) {
 }
 if (localStorage.getItem("history") === null) {
   localStorage.setItem("history", JSON.stringify([]));
+}
+if (localStorage.getItem("lock") === null) {
+  localStorage.setItem("lock", JSON.stringify([]));
 }
