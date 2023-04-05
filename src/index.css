@@ -69,6 +69,10 @@ body {
   animation: loading 2s linear infinite;
   border-radius: 2px;
 }
+#dot {
+  animation: rotate 1s linear infinite;
+  margin-left: 10px;
+}
 .tip {
   top: 10px;
   position: absolute;
@@ -78,4 +82,10 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   font-size: smaller;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
