@@ -1,0 +1,61 @@
+p {
+  margin: 0;
+}
+.katex {
+  display: inline-block;
+  padding: 0 6px;
+  margin: 2px;
+  font-size: smaller !important;
+  line-height: 1.6 !important;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+p code {
+  padding: 0 4px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+pre code {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-x: scroll;
+}
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.hidden {
+  display: none !important;
+}
+.block {
+  display: block;
+}
+.loading {
+  filter: grayscale(100%);
+}
+.w-0 {
+  width: 0 !important;
+}

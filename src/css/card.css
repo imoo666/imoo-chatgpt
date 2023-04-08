@@ -1,0 +1,57 @@
+.imoo-mask {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.imoo-card {
+  border: 1px solid #d7d3d3;
+  position: absolute;
+  background-color: white;
+  width: 80%;
+  height: 40%;
+  top: 30%;
+  border-radius: 10px;
+}
+.imoo-card-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d7d3d3;
+  align-items: center;
+  font-weight: 500;
+  font-size: larger;
+}
+.imoo-card-close {
+  width: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+.imoo-card-body {
+  padding: 20px;
+  height: 100%;
+  max-height: 30vh;
+  overflow-y: scroll;
+}
+.imoo-card-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imoo-card-events > div {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d7d3d3;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  justify-content: center;
+  cursor: pointer;
+}
