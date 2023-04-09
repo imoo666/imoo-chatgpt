@@ -17,7 +17,7 @@
   position: absolute;
   background-color: white;
   width: 80%;
-  height: 40%;
+  height: 50vh;
   top: 30%;
   border-radius: 10px;
 }
@@ -35,9 +35,10 @@
   cursor: pointer;
 }
 .imoo-card-body {
+  box-sizing: border-box;
   padding: 20px;
   height: 100%;
-  max-height: 30vh;
+  max-height: 40vh;
   overflow-y: scroll;
 }
 .imoo-card-events {
@@ -54,4 +55,15 @@
   padding: 10px 0;
   justify-content: center;
   cursor: pointer;
+}
+.memo-button {
+  margin-bottom: 10px;
+}
+.imoo-card input {
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  width: 100%;
 }

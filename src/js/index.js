@@ -6,6 +6,7 @@ import {
   getLastItems,
   renderCard,
   $,
+  renderHistory,
 } from "./utils";
 import { doInstruction } from "./instruction";
 import { getMessage } from "./message";
@@ -18,7 +19,7 @@ const query = async (queryItem) => {
   const key = localStorage.getItem("key");
   const history = getLastItems(
     JSON.parse(localStorage.getItem("history")),
-    3000,
+    2000,
     20
   );
   try {
@@ -51,7 +52,7 @@ const query = async (queryItem) => {
 };
 
 // 用于触发查询
-const handleSend = () => {
+export const handleSend = () => {
   const question = $("#input").value;
   if (question.trim() === "") {
     renderMessageTip("不能输入空的内容");
@@ -95,15 +96,6 @@ const init = () => {
   $("#sendButton").addEventListener("click", handleSend);
   $("#menuButton").addEventListener("click", handleMenuClick);
 
-  // 进入页面时，渲染历史记录
-  const historyList = JSON.parse(localStorage.getItem("history")) || [];
-  if (historyList.length > 0) {
-    historyList.forEach((item) => render(item));
-  } else {
-    $("#input").placeholder = "在此输入您的问题吧~";
-  }
-  // renderCard({ title: "提示", body: markedParse(tips) });
-
   // 基本配置项设置与检查
   if (localStorage.getItem("key") === null) {
     renderCard({ title: "提示", body: markedParse(tips) });
@@ -120,6 +112,14 @@ const init = () => {
     localStorage.getItem("lock") === "[]"
   ) {
     localStorage.setItem("lock", "");
+  }
+
+  // 进入页面时，渲染历史记录
+  const historyList = JSON.parse(localStorage.getItem("history")) || [];
+  if (historyList.length > 0) {
+    renderHistory();
+  } else {
+    $("#input").placeholder = "在此输入您的问题吧~";
   }
 };
 init();
