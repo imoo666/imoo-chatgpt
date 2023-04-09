@@ -1,5 +1,5 @@
 # imoo-chatgpt
-一个仿微信聊天窗口的页面，使用 vite 进行构建，使用原生 js 实现
+一个仿微信聊天窗口的页面，使用 vite 进行构建，使用原生 js 实现（不支持流式输出）
 
 # 体验地址
 https://service-4yyxn9tm-1258094572.usw.apigw.tencentcs.com/release/imoo_html
