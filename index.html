@@ -4,20 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>imoo-ai</title>
-    <link rel="stylesheet" href="./src/index.css" />
+    <title>imoo</title>
+    <link rel="stylesheet" href="./src/css/init.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="stylesheet" href="./src/css/card.css" />
   </head>
 
   <body>
-    <div id="container"></div>
-    <div class="inputWrapper">
-      <input id="input" autofocus />
-      <div id="button">
-        <div>发送</div>
-        <div id="dot" class="hidden">.</div>
+    <div id="main">
+      <div id="container"></div>
+      <div class="inputWrapper">
+        <div id="menuButton">=</div>
+        <input id="input" autofocus />
+        <div id="sendButton">
+          <div>发送</div>
+          <div id="dot" class="hidden">.</div>
+        </div>
       </div>
     </div>
   </body>
 
-  <script type="module" src="./src/index.js"></script>
+  <script type="module" src="./src/js/index.js"></script>
 </html>
