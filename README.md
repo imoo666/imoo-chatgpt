@@ -17,3 +17,5 @@ npm run build
 
 # 关于后端
 替换掉我的 api.js 文件，起个服务，接收 key 和 message 做转发到 gpt 相关接口即可
+
+> 859416516@qq.com
