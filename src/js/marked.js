@@ -1,8 +1,9 @@
 import hljs from "highlight.js/lib/common";
 import "highlight.js/styles/github.css";
 import { marked } from "marked";
-import katex from "../module/katex";
-import "../module/katex/dist/katex.css";
+import katex from "katex";
+import "../module/katex/dist/katex.css"; // 字体包过多，该 css 中移除大部分字体，若不符合需求使用下面这个即可恢复
+// import "katex/dist/katex.css";
 
 function inlineKatex(options) {
   return {
