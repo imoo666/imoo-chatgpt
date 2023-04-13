@@ -1,13 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
-  commonmark: ^0.30.0
   copy-to-clipboard: ^3.3.3
   esbuild: ^0.17.15
   highlight.js: ^11.7.0
-  lodash: ^4.17.21
   lodash.escape: ^4.0.1
-  markdown-it: ^13.0.1
   marked: ^4.3.0
   rollup-plugin-terser: ^7.0.2
   vite: ^4.2.0
@@ -15,12 +12,9 @@ specifiers:
   vite-plugin-singlefile: ^0.13.5
 
 dependencies:
-  commonmark: registry.npmmirror.com/commonmark/0.30.0
   copy-to-clipboard: registry.npmmirror.com/copy-to-clipboard/3.3.3
   highlight.js: registry.npmmirror.com/highlight.js/11.7.0
-  lodash: registry.npmmirror.com/lodash/4.17.21
   lodash.escape: registry.npmmirror.com/lodash.escape/4.0.1
-  markdown-it: registry.npmmirror.com/markdown-it/13.0.1
   marked: registry.npmmirror.com/marked/4.3.0
   rollup-plugin-terser: registry.npmmirror.com/rollup-plugin-terser/7.0.2
   vite-plugin-compression: registry.npmmirror.com/vite-plugin-compression/0.5.1_vite@4.2.1
@@ -366,12 +360,6 @@ packages:
       color-convert: registry.npmmirror.com/color-convert/2.0.1
     dev: false
 
-  registry.npmmirror.com/argparse/2.0.1:
-    resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/argparse/-/argparse-2.0.1.tgz}
-    name: argparse
-    version: 2.0.1
-    dev: false
-
   registry.npmmirror.com/braces/3.0.2:
     resolution: {integrity: sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/braces/-/braces-3.0.2.tgz}
     name: braces
@@ -443,18 +431,6 @@ packages:
     version: 2.20.3
     dev: false
 
-  registry.npmmirror.com/commonmark/0.30.0:
-    resolution: {integrity: sha512-j1yoUo4gxPND1JWV9xj5ELih0yMv1iCWDG6eEQIPLSWLxzCXiFoyS7kvB+WwU+tZMf4snwJMMtaubV0laFpiBA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commonmark/-/commonmark-0.30.0.tgz}
-    name: commonmark
-    version: 0.30.0
-    hasBin: true
-    dependencies:
-      entities: registry.npmmirror.com/entities/2.0.3
-      mdurl: registry.npmmirror.com/mdurl/1.0.1
-      minimist: registry.npmmirror.com/minimist/1.2.8
-      string.prototype.repeat: registry.npmmirror.com/string.prototype.repeat/0.2.0
-    dev: false
-
   registry.npmmirror.com/copy-to-clipboard/3.3.3:
     resolution: {integrity: sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/copy-to-clipboard/-/copy-to-clipboard-3.3.3.tgz}
     name: copy-to-clipboard
@@ -475,19 +451,6 @@ packages:
         optional: true
     dependencies:
       ms: registry.npmmirror.com/ms/2.1.2
-    dev: false
-
-  registry.npmmirror.com/entities/2.0.3:
-    resolution: {integrity: sha512-MyoZ0jgnLvB2X3Lg5HqpFmn1kybDiIfEQmKzTb5apr51Rb+T3KdmMiqa70T+bhGnyv7bQ6WMj2QMHpGMmlrUYQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/entities/-/entities-2.0.3.tgz}
-    name: entities
-    version: 2.0.3
-    dev: false
-
-  registry.npmmirror.com/entities/3.0.1:
-    resolution: {integrity: sha512-WiyBqoomrwMdFG1e0kqvASYfnlb0lp8M5o5Fw2OFq1hNZxxcNk8Ik0Xm7LxzBhuidnZB/UtBqVCgUz3kBOP51Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/entities/-/entities-3.0.1.tgz}
-    name: entities
-    version: 3.0.1
-    engines: {node: '>=0.12'}
     dev: false
 
   registry.npmmirror.com/esbuild/0.17.15:
@@ -638,37 +601,10 @@ packages:
       graceful-fs: registry.npmmirror.com/graceful-fs/4.2.11
     dev: false
 
-  registry.npmmirror.com/linkify-it/4.0.1:
-    resolution: {integrity: sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/linkify-it/-/linkify-it-4.0.1.tgz}
-    name: linkify-it
-    version: 4.0.1
-    dependencies:
-      uc.micro: registry.npmmirror.com/uc.micro/1.0.6
-    dev: false
-
   registry.npmmirror.com/lodash.escape/4.0.1:
     resolution: {integrity: sha512-nXEOnb/jK9g0DYMr1/Xvq6l5xMD7GDG55+GSYIYmS0G4tBk/hURD4JR9WCavs04t33WmJx9kCyp9vJ+mr4BOUw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash.escape/-/lodash.escape-4.0.1.tgz}
     name: lodash.escape
     version: 4.0.1
-    dev: false
-
-  registry.npmmirror.com/lodash/4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
-    name: lodash
-    version: 4.17.21
-    dev: false
-
-  registry.npmmirror.com/markdown-it/13.0.1:
-    resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/markdown-it/-/markdown-it-13.0.1.tgz}
-    name: markdown-it
-    version: 13.0.1
-    hasBin: true
-    dependencies:
-      argparse: registry.npmmirror.com/argparse/2.0.1
-      entities: registry.npmmirror.com/entities/3.0.1
-      linkify-it: registry.npmmirror.com/linkify-it/4.0.1
-      mdurl: registry.npmmirror.com/mdurl/1.0.1
-      uc.micro: registry.npmmirror.com/uc.micro/1.0.6
     dev: false
 
   registry.npmmirror.com/marked/4.3.0:
@@ -677,12 +613,6 @@ packages:
     version: 4.3.0
     engines: {node: '>= 12'}
     hasBin: true
-    dev: false
-
-  registry.npmmirror.com/mdurl/1.0.1:
-    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mdurl/-/mdurl-1.0.1.tgz}
-    name: mdurl
-    version: 1.0.1
     dev: false
 
   registry.npmmirror.com/merge-stream/2.0.0:
@@ -700,12 +630,6 @@ packages:
       braces: registry.npmmirror.com/braces/3.0.2
       picomatch: registry.npmmirror.com/picomatch/2.3.1
     dev: true
-
-  registry.npmmirror.com/minimist/1.2.8:
-    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/minimist/-/minimist-1.2.8.tgz}
-    name: minimist
-    version: 1.2.8
-    dev: false
 
   registry.npmmirror.com/ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ms/-/ms-2.1.2.tgz}
@@ -824,12 +748,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  registry.npmmirror.com/string.prototype.repeat/0.2.0:
-    resolution: {integrity: sha512-1BH+X+1hSthZFW+X+JaUkjkkUPwIlLEMJBLANN3hOob3RhEk5snLWNECDnYbgn/m5c5JV7Ersu1Yubaf+05cIA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/string.prototype.repeat/-/string.prototype.repeat-0.2.0.tgz}
-    name: string.prototype.repeat
-    version: 0.2.0
-    dev: false
-
   registry.npmmirror.com/supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/supports-color/-/supports-color-5.5.0.tgz}
     name: supports-color
@@ -879,12 +797,6 @@ packages:
   registry.npmmirror.com/toggle-selection/1.0.6:
     resolution: {integrity: sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/toggle-selection/-/toggle-selection-1.0.6.tgz}
     name: toggle-selection
-    version: 1.0.6
-    dev: false
-
-  registry.npmmirror.com/uc.micro/1.0.6:
-    resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/uc.micro/-/uc.micro-1.0.6.tgz}
-    name: uc.micro
     version: 1.0.6
     dev: false
 

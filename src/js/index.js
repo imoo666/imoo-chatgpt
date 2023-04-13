@@ -107,12 +107,8 @@ const init = () => {
   if (localStorage.getItem("history") === null) {
     localStorage.setItem("history", JSON.stringify([]));
   }
-  if (
-    localStorage.getItem("lock") === null ||
-    localStorage.getItem("lock") === "[]"
-  ) {
-    localStorage.setItem("lock", "");
-  }
+  // 进入页面清空预设
+  localStorage.setItem("lock", "");
 
   // 进入页面时，渲染历史记录
   const historyList = JSON.parse(localStorage.getItem("history")) || [];
