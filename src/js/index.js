@@ -88,13 +88,20 @@ export const handleSend = () => {
 // 一些初始化
 const init = () => {
   // 关联回车和发送触发 handleSend
-  document.addEventListener("keyup", (e) => {
+  $("#sendButton").addEventListener("click", handleSend);
+  $("#menuButton").addEventListener("click", handleMenuClick);
+  $("#input").addEventListener("keyup", (e) => {
+    // 防止删除时，scrollHeight 无法恢复
+    $("#input").style.height = 0;
+    // 计算高度，其中 20 是内边距
+    $("#input").style.height = $("#input").scrollHeight - 20 + "px";
+    // 将消息拉到最低以免影响查看
+    $("#container").scrollTop = 999999;
+
     if (e.code === "Enter") {
       handleSend();
     }
   });
-  $("#sendButton").addEventListener("click", handleSend);
-  $("#menuButton").addEventListener("click", handleMenuClick);
 
   // 基本配置项设置与检查
   if (localStorage.getItem("key") === null) {
