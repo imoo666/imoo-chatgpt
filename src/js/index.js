@@ -53,7 +53,9 @@ const query = async (queryItem) => {
 
 // 用于触发查询
 export const handleSend = () => {
-  const question = $("#input").value;
+  // 去掉前后的空格和回车
+  const question = $("#input").value.replace(/\s*$/, "");
+
   if (question.trim() === "") {
     renderMessageTip("不能输入空的内容");
     return;
@@ -62,7 +64,10 @@ export const handleSend = () => {
     renderMessageTip("输入不能超过3000字哦");
     return;
   }
+
+  // 销毁和重新计算
   $("#input").value = "";
+  calcHeight();
 
   // 斜杠开头都是指令
   if (question.startsWith("/")) {
@@ -85,21 +90,27 @@ export const handleSend = () => {
   query(queryItem);
 };
 
+// 计算高度
+const calcHeight = () => {
+  // 防止删除时，scrollHeight 无法恢复
+  $("#input").style.height = 0;
+  // 计算高度，其中 20 是内边距
+  $("#input").style.height = $("#input").scrollHeight - 20 + "px";
+};
+
 // 一些初始化
 const init = () => {
   // 关联回车和发送触发 handleSend
   $("#sendButton").addEventListener("click", handleSend);
   $("#menuButton").addEventListener("click", handleMenuClick);
+  $("#input").addEventListener("input", (e) => {
+    calcHeight();
+  });
   $("#input").addEventListener("keyup", (e) => {
-    // 防止删除时，scrollHeight 无法恢复
-    $("#input").style.height = 0;
-    // 计算高度，其中 20 是内边距
-    $("#input").style.height = $("#input").scrollHeight - 20 + "px";
-    // 将消息拉到最低以免影响查看
-    $("#container").scrollTop = 999999;
-
     if (e.code === "Enter") {
       handleSend();
+      // 将消息拉到最低以免影响查看
+      $("#container").scrollTop = 999999;
     }
   });
 
@@ -123,6 +134,11 @@ const init = () => {
     renderHistory();
   } else {
     $("#input").placeholder = "在此输入您的问题吧~";
+    const queryItem = {
+      role: "assistant",
+      content: "我是人工智能 imoo，今天有什么能帮您~",
+    };
+    render(queryItem);
   }
 };
 init();

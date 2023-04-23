@@ -47,6 +47,10 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: small;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+textarea {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 .button-primary {
   background-color: #0078e7;
